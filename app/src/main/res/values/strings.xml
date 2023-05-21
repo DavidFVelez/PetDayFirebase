@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">PetDay</string>
+    <string name="tengo_una_mascota">Tengo una mascota</string>
+    <string name="yo_ofrezco_servicios_para_mascotas">Yo ofrezco servicios para Mascotas</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Correo electrónico</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="iniciar_sesion">Inicie sesión</string>
+    <string name="entrar">Entrar</string>
+    <string name="opciones_de_inicio">O continuar con</string>
+    <string name="twitter">Twitter</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="crear_cuenta">Si no tienes cuentas crea una Aquí</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="titulo_fragment_register">Registro</string>
+    <string name="correo_fragment_registro">Correo</string>
+    <string name="nombre_de_usuario_fragment_resgistro">Nombre de usuario</string>
+    <string name="telefono_fragment_registro">Teléfono</string>
+    <string name="contrasena_fragment_registro">Contraseña</string>
+    <string name="repetir_contrasena_fragment_registro">Repetir contraseña</string>
+    <string name="boton_registro_fragment_registro">Registrarse</string>
+    <string name="title_activity_bottom_navigation">BottomNavigationActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="momentos_cuidador">Momentos</string>
+    <string name="trabajos_cuidador">Trabajos</string>
+    <string name="perfil_cuidador">Perfil</string>
+    <string name="inicio_cuidador_fragment">Inicio</string>
+    <string name="texto_logo_petday">PetDay</string>
+    <string name="title_activity_bottom_nav_dueno">BottomNavDuenoActivity</string>
+    <string name="mascotas_fragment_texto">Mascotas</string>
+</resources>
