@@ -84,6 +84,23 @@ class CarerRegisterViewModel : ViewModel() {
         viewModelScope.launch {
 
             val result = userRepository.createUser(user)
+            result.let { resourceRemote ->
+                when(resourceRemote){
+                    is ResourceRemote.Success ->{
+                        _isSuccessSignUp.postValue(true)
+                        _errorMsg.postValue("Registro exitoso")
+
+                    }
+                    is ResourceRemote.Error -> {
+                        val msg = result.message
+                        _errorMsg.postValue(msg)
+
+
+                    }else -> {
+
+                    }
+                }
+            }
 
         }
 
