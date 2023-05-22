@@ -38,4 +38,5 @@
     <string name="texto_logo_petday">PetDay</string>
     <string name="title_activity_bottom_nav_dueno">BottomNavDuenoActivity</string>
     <string name="mascotas_fragment_texto">Mascotas</string>
+    <string name="sign_out">Cerrar sesión</string>
 </resources>

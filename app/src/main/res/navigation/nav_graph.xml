@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/perfilCuidadorFragment">
+
+    <fragment
+        android:id="@+id/perfilCuidadorFragment"
+        android:name="com.davidvelez.petday.iu.fragments.PerfilCuidadorFragment"
+        android:label="fragment_perfil_cuidador"
+        tools:layout="@layout/fragment_perfil_cuidador" >
+        <action
+            android:id="@+id/action_perfilCuidadorFragment_to_carerLoginFragment"
+            app:destination="@id/carerLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carerLoginFragment"
+        android:name="com.davidvelez.petday.iu.login.CarerLoginFragment"
+        android:label="fragment_carer_login"
+        tools:layout="@layout/fragment_carer_login" />
+</navigation>

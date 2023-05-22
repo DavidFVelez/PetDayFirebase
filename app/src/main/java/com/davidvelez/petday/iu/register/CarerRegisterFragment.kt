@@ -31,7 +31,8 @@ class CarerRegisterFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         carerRegisterViewModel.isSuccessSignUp.observe(viewLifecycleOwner) {
-            findNavController().navigate(CarerRegisterFragmentDirections.actionCarerRegisterFragmentToCarerLoginFragment())
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+
         }
         carerRegisterViewModel.errorMsg.observe(viewLifecycleOwner) { errorMsg ->
             Toast.makeText(context, errorMsg, Toast.LENGTH_SHORT).show()

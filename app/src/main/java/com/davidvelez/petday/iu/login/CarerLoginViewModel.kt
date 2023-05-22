@@ -1,7 +1,5 @@
 package com.davidvelez.petday.iu.login
 
-
-import android.text.Editable
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.davidvelez.petday.data.ResourceRemote
 import com.davidvelez.petday.data.UserRepository
 import kotlinx.coroutines.launch
-
 
 class CarerLoginViewModel : ViewModel() {
 
@@ -25,8 +22,7 @@ class CarerLoginViewModel : ViewModel() {
 
         if (email.isNotEmpty() and email.isNotEmpty()) {
             viewModelScope.launch {
-                val resourceRemote = userRepository.signInpUser(email, password)
-                when (resourceRemote) {
+                when (val resourceRemote = userRepository.signInpUser(email, password)) {
                     is ResourceRemote.Success -> {
                         _isSuccessSignIn.postValue(true)
                     }

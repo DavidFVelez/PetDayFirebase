@@ -26,6 +26,8 @@
             android:id="@+id/action_carerRegisterFragment_to_carerLoginFragment"
             app:destination="@id/carerLoginFragment" />
     </fragment>
+
+
     <activity
         android:id="@+id/bottomNavigationActivity"
         android:name="com.davidvelez.petday.iu.bottomnavigation.BottomNavigationActivity"

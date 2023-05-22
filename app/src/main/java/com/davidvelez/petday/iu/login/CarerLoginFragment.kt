@@ -1,17 +1,14 @@
 package com.davidvelez.petday.iu.login
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.Observer
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.davidvelez.petday.databinding.FragmentCarerLoginBinding
-import com.davidvelez.petday.iu.register.CarerRegisterFragmentDirections
-import com.davidvelez.petday.iu.register.CarerRegisterViewModel
 
 
 class CarerLoginFragment : Fragment() {
