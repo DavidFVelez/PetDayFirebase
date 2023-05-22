@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.davidvelez.petday.Model.User
 import com.davidvelez.petday.data.ResourceRemote
 import com.davidvelez.petday.data.UserRepository
 import kotlinx.coroutines.launch
@@ -18,9 +19,15 @@ class CarerRegisterViewModel : ViewModel() {
     private val _errorMsg: MutableLiveData<String?> = MutableLiveData()
     val errorMsg: LiveData<String?> = _errorMsg
 
-    fun validarContrasena(password: String, repPassword: String, email: String) {
+    fun validarContrasena(
+        password: String,
+        repPassword: String,
+        email: String,
+        name: String,
+        phone: String
+    ) {
 
-        if (email.isNotEmpty() and password.isNotEmpty() and repPassword.isNotEmpty()) {
+        if (email.isNotEmpty() and password.isNotEmpty() and repPassword.isNotEmpty() and name.isNotEmpty() and phone.isNotEmpty()) {
             if (password.length >= 6) {
                 if (password == repPassword) {
                     viewModelScope.launch {
@@ -28,7 +35,16 @@ class CarerRegisterViewModel : ViewModel() {
                         result.let { resourceRemote ->
                             when (resourceRemote) {
                                 is ResourceRemote.Success -> {
-                                    _isSuccessSignUp.postValue(true)
+
+                                    val user = User(
+                                        uid = resourceRemote.data,
+                                        name = name,
+                                        email = email,
+                                        phone = phone
+                                    )
+
+                                    createUser(user)
+//                                    _isSuccessSignUp.postValue(true)
 
                                 }
                                 is ResourceRemote.Error -> {
@@ -36,8 +52,10 @@ class CarerRegisterViewModel : ViewModel() {
                                     when (resourceRemote.message) {
                                         "A network error (such as timeout, interrupted connection or unreachable host) has occurred."
                                         -> msg = "Revise su conexión a internet"
-                                        "The email address is already in use by another account." -> msg = "Ya existe una cuenta con ese correo electrónico"
-                                        "The email address is badly formatted." -> msg = "El correo electrónico esta mal escrito"
+                                        "The email address is already in use by another account." -> msg =
+                                            "Ya existe una cuenta con ese correo electrónico"
+                                        "The email address is badly formatted." -> msg =
+                                            "El correo electrónico esta mal escrito"
 
                                     }
                                     _errorMsg.postValue(msg)
@@ -59,5 +77,15 @@ class CarerRegisterViewModel : ViewModel() {
         } else {
             _errorMsg.value = "Rellenar los campos vacíos"
         }
+    }
+
+    private fun createUser(user: User) {
+
+        viewModelScope.launch {
+
+            val result = userRepository.createUser(user)
+
+        }
+
     }
 }

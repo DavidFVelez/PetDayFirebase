@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import com.davidvelez.petday.databinding.FragmentCarerRegisterBinding
 
 class CarerRegisterFragment : Fragment() {
@@ -41,7 +40,9 @@ class CarerRegisterFragment : Fragment() {
             carerRegisterViewModel.validarContrasena(
                 carerRegisterBinding.contrasenhaUsuarioRegisterEditText.text.toString(),
                 carerRegisterBinding.repetirContrasenhaUsuarioRegisterEditText.text.toString(),
-                carerRegisterBinding.correoRegisterEditText.text.toString()
+                carerRegisterBinding.correoRegisterEditText.text.toString(),
+                carerRegisterBinding.nombreUsuarioRegisterEditText.text.toString(),
+                carerRegisterBinding.telefonoUsuarioRegisterEditText.text.toString()
             )
         }
 

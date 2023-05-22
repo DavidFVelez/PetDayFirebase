@@ -26,7 +26,11 @@
         android:id="@+id/perfilCuidadorFragment"
         android:name="com.davidvelez.petday.iu.fragments.PerfilCuidadorFragment"
         android:label="Perfil"
-        tools:layout="@layout/fragment_perfil_cuidador" />
+        tools:layout="@layout/fragment_perfil_cuidador" >
+        <action
+            android:id="@+id/action_perfilCuidadorFragment_to_carerLoginFragment"
+            app:destination="@id/carerLoginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/inicioCuidadorFragment"
         android:name="com.davidvelez.petday.iu.fragments.InicioCuidadorFragment"
@@ -36,4 +40,9 @@
             android:id="@+id/action_inicioCuidadorFragment_to_trabajosFragment"
             app:destination="@id/trabajosFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/carerLoginFragment"
+        android:name="com.davidvelez.petday.iu.login.CarerLoginFragment"
+        android:label="fragment_carer_login"
+        tools:layout="@layout/fragment_carer_login" />
 </navigation>

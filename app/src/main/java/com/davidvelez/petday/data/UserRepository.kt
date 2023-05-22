@@ -1,6 +1,7 @@
 package com.davidvelez.petday.data
 
 import android.util.Log
+import com.davidvelez.petday.Model.User
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthException
@@ -37,15 +38,13 @@ class UserRepository {
     }
 
     fun isSessionActive(): Boolean {
-        return if (auth == null) {
-            false
-        } else {
-            true
-        }
+        return auth.currentUser != null
     }
 
-    fun signOut(): Boolean {
+    fun signOut(){
         auth.signOut()
-        return true
+    }
+
+    fun createUser(user: User) {
     }
 }
