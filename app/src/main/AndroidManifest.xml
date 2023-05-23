@@ -11,12 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PetDay"
         tools:targetApi="31">
-        <activity
-            android:name=".iu.bottomnavigation.BottomNavDuenoActivity"
-            android:exported="true"
-            android:label="@string/title_activity_bottom_nav_dueno" >
+        <meta-data
+            android:name="firebase_performance_logcat_enabled"
+            android:value="true" />
 
-        </activity>
         <activity
             android:name=".iu.splash.SplashActivity"
             android:exported="true"

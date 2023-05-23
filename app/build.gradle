@@ -4,6 +4,7 @@ plugins {
     id ("androidx.navigation.safeargs.kotlin")
     id 'com.google.gms.google-services'
     id 'com.google.firebase.crashlytics'
+    id 'com.google.firebase.firebase-perf'
 }
 
 android {
@@ -58,6 +59,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore-ktx:24.6.0'
     implementation 'com.google.firebase:firebase-crashlytics-ktx:18.3.7'
     implementation 'com.google.firebase:firebase-analytics-ktx:21.2.2'
+    implementation 'com.google.firebase:firebase-perf-ktx:20.3.2'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

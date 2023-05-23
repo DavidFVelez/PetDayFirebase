@@ -1,16 +1,15 @@
-package com.davidvelez.petday.iu.fragments
+package com.davidvelez.petday.iu.profile
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.davidvelez.petday.R
 import com.davidvelez.petday.databinding.FragmentPerfilCuidadorBinding
-import com.davidvelez.petday.iu.login.CarerLoginFragmentDirections
+import com.davidvelez.petday.iu.profile.PerfilCuidadorFragmentDirections
 
 
 class PerfilCuidadorFragment : Fragment() {
@@ -26,6 +25,20 @@ class PerfilCuidadorFragment : Fragment() {
 
         _binding = FragmentPerfilCuidadorBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        profileCarerViewModel.loadUserInfo()
+
+        profileCarerViewModel.errorMsg.observe(viewLifecycleOwner){ errorMsg ->
+            Toast.makeText(requireContext(), errorMsg, Toast.LENGTH_SHORT).show()
+        }
+
+        profileCarerViewModel.userLoaded.observe(viewLifecycleOwner){ user ->
+            with(binding){
+                nameProfileCarer.text = user?.name
+                emailProfileCarer.text = user?.email
+                phoneProfileCarer.text = user?.phone
+            }
+        }
 
 
         binding.signOutButton.setOnClickListener {

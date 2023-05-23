@@ -6,43 +6,36 @@
     app:startDestination="@id/inicioCuidadorFragment">
     <fragment
         android:id="@+id/momentosFragment"
-        android:name="com.davidvelez.petday.iu.fragments.MomentosFragment"
+        android:name="com.davidvelez.petday.iu.moments.MomentosFragment"
         android:label="Momentos"
-        tools:layout="@layout/fragment_momentos" >
-        <action
-            android:id="@+id/action_momentosFragment_to_perfilCuidadorFragment"
-            app:destination="@id/perfilCuidadorFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_momentos" />
     <fragment
         android:id="@+id/trabajosFragment"
-        android:name="com.davidvelez.petday.iu.fragments.TrabajosFragment"
+        android:name="com.davidvelez.petday.iu.jobs.TrabajosFragment"
         android:label="Trabajos"
-        tools:layout="@layout/fragment_trabajos" >
-        <action
-            android:id="@+id/action_trabajosFragment_to_perfilCuidadorFragment"
-            app:destination="@id/perfilCuidadorFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_trabajos" />
     <fragment
         android:id="@+id/perfilCuidadorFragment"
-        android:name="com.davidvelez.petday.iu.fragments.PerfilCuidadorFragment"
+        android:name="com.davidvelez.petday.iu.profile.PerfilCuidadorFragment"
         android:label="Perfil"
-        tools:layout="@layout/fragment_perfil_cuidador" >
-        <action
-            android:id="@+id/action_perfilCuidadorFragment_to_carerLoginFragment"
-            app:destination="@id/carerLoginFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_perfil_cuidador" />
     <fragment
         android:id="@+id/inicioCuidadorFragment"
-        android:name="com.davidvelez.petday.iu.fragments.InicioCuidadorFragment"
+        android:name="com.davidvelez.petday.iu.services.InicioCuidadorFragment"
         android:label="Inicio"
         tools:layout="@layout/fragment_inicio_cuidador" >
         <action
-            android:id="@+id/action_inicioCuidadorFragment_to_trabajosFragment"
-            app:destination="@id/trabajosFragment" />
+            android:id="@+id/action_inicioCuidadorFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
     </fragment>
     <fragment
         android:id="@+id/carerLoginFragment"
         android:name="com.davidvelez.petday.iu.login.CarerLoginFragment"
         android:label="fragment_carer_login"
         tools:layout="@layout/fragment_carer_login" />
+    <fragment
+        android:id="@+id/servicesFragment"
+        android:name="com.davidvelez.petday.iu.newservices.ServicesFragment"
+        android:label="fragment_services"
+        tools:layout="@layout/fragment_services" />
 </navigation>

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/perfilCuidadorFragment2"
-        android:name="com.davidvelez.petday.iu.fragments.PerfilCuidadorFragment"
+        android:name="com.davidvelez.petday.iu.profile.PerfilCuidadorFragment"
         android:label="fragment_perfil_cuidador"
         tools:layout="@layout/fragment_perfil_cuidador" >
         <action

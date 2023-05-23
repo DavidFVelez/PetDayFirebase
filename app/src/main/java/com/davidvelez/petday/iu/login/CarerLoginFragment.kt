@@ -43,7 +43,6 @@ class CarerLoginFragment : Fragment() {
         }
 
         carerLoginBinding.entrar.setOnClickListener {
-            throw RuntimeException("Test Crash")
             carerLoginViewModel.validarDatos(
                 carerLoginBinding.correoEditText.text.toString(),
                 carerLoginBinding.contraseAEditText.text.toString()
