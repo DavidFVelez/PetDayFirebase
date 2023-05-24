@@ -1,5 +1,6 @@
 package com.davidvelez.petday.iu.profile
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.davidvelez.petday.databinding.FragmentPerfilCuidadorBinding
+import com.davidvelez.petday.iu.main.MainActivity
 import com.davidvelez.petday.iu.profile.PerfilCuidadorFragmentDirections
 
 
@@ -43,7 +45,8 @@ class PerfilCuidadorFragment : Fragment() {
 
         binding.signOutButton.setOnClickListener {
             profileCarerViewModel.signOut()
-            findNavController().navigate(PerfilCuidadorFragmentDirections.actionPerfilCuidadorFragmentToCarerLoginFragment())
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
             activity?.finish()
 
         }

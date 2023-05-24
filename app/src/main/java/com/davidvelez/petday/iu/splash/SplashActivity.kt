@@ -7,7 +7,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import com.davidvelez.petday.databinding.ActivitySplashBinding
 import com.davidvelez.petday.iu.bottomnavigation.BottomNavigationActivity
-import com.davidvelez.petday.iu.useroptions.UserOptionsActivity
+import com.davidvelez.petday.iu.main.MainActivity
 import java.util.*
 import kotlin.concurrent.timerTask
 
@@ -32,7 +32,7 @@ class SplashActivity : AppCompatActivity() {
         timer.schedule(
             timerTask {
                 if (!isSessionActive) {
-                    val intent = Intent(this@SplashActivity, UserOptionsActivity::class.java)
+                    val intent = Intent(this@SplashActivity, MainActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else {

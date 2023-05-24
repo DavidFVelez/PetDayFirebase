@@ -33,12 +33,15 @@ class CarerLoginFragment : Fragment() {
 
         carerLoginViewModel.isSuccessSignIn.observe(viewLifecycleOwner){
             findNavController().navigate(CarerLoginFragmentDirections.actionCarerLoginFragmentToBottomNavigationActivity())
+            activity?.finish()
         }
         carerLoginViewModel.errorMsg.observe(viewLifecycleOwner){ errorMsg ->
             Toast.makeText(context, errorMsg, Toast.LENGTH_SHORT).show()
         }
 
         carerLoginBinding.sinoHayCuenta.setOnClickListener {
+            carerLoginBinding.correoEditText.setText("")
+            carerLoginBinding.contraseAEditText.setText("")
             findNavController().navigate(CarerLoginFragmentDirections.actionCarerLoginFragmentToCarerRegisterFragment())
         }
 

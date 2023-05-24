@@ -13,27 +13,13 @@
         android:orientation="vertical"
         tools:context=".iu.newservices.ServicesFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
-            android:id="@+id/titulo_registro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:background="#8333E5"
-            android:text="Solicitar servicio"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="23sp"
-            android:textStyle="bold" />
-
-        <!-- Campo de imagen de la mascota -->
         <ImageView
             android:id="@+id/image_pet_new_service"
             android:layout_width="205dp"
             android:layout_height="205dp"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:contentDescription="pet_image"
+            android:contentDescription="@string/pet_image_new_service"
             android:src="@drawable/imagen_fragment_register" />
 
         <!-- Botón para seleccionar imagen de la mascota -->
@@ -45,7 +31,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="8dp"
             android:backgroundTint="#607D8B"
-            android:text="Agregar foto" />
+            android:text="@string/agregar_foto_new_service" />
 
         <TextView
             android:id="@+id/title_type_pet_new_service"
@@ -55,39 +41,32 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="1dp"
-            android:text=" ¿Tu mascota es un ?"
+            android:text="@string/tu_mascota_es_un_new_service"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold" />
 
         <RadioGroup
-            android:id="@+id/redio_group_pet"
+            android:id="@+id/radio_group_pet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp">
+            android:layout_marginEnd="8dp"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <RadioButton
+                android:id="@+id/cat_radio_button"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:text="@string/gato_new_service"
+                android:checked="true" />
 
-                <RadioButton
-                    android:id="@+id/cat_radio_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Gato" />
-
-                <RadioButton
-                    android:id="@+id/dog_radio_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Perro" />
-
-            </LinearLayout>
+            <RadioButton
+                android:id="@+id/dog_radio_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/perro_new_service" />
 
         </RadioGroup>
 
@@ -100,7 +79,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="1dp"
-            android:text="Tipo de servicio"
+            android:text="@string/tipo_de_servicio"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -121,21 +100,21 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Paseo" />
+                android:text="@string/pasear_new_service" />
 
             <CheckBox
                 android:id="@+id/cuidar_new_service"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Cuidar" />
+                android:text="@string/cuidar_new_service" />
 
             <CheckBox
                 android:id="@+id/banar_new_service"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Bañar" />
+                android:text="@string/banar_new_service" />
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -151,7 +130,7 @@
                 android:id="@+id/description_new_service_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Descripción"
+                android:hint="@string/descripcion_new_service"
                 android:inputType="textMultiLine" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -169,7 +148,7 @@
                 android:id="@+id/cost_new_service_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Precio"
+                android:hint="@string/precio_new_service"
                 android:inputType="numberDecimal" />
         </com.google.android.material.textfield.TextInputLayout>
 

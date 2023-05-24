@@ -42,7 +42,7 @@ class ServicesAdapter (
         fun bind(service: Service){
             with(binding){
                 nameServiceTextView.text= service.description
-                costServiceTextView.text = "Precio: ${service.cost}"
+                costServiceTextView.text = "Precio:$ ${service.cost}"
 
             }
 

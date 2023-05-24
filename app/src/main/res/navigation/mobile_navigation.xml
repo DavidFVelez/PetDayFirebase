@@ -36,6 +36,6 @@
     <fragment
         android:id="@+id/servicesFragment"
         android:name="com.davidvelez.petday.iu.newservices.ServicesFragment"
-        android:label="fragment_services"
+        android:label="Nuevo servicio"
         tools:layout="@layout/fragment_services" />
 </navigation>
