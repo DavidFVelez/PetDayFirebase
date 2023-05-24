@@ -1,5 +1,6 @@
 package com.davidvelez.petday.iu.services
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,10 +40,23 @@ class ServicesAdapter (
 
     class ServicesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         private val binding = CardViewServiceItemBinding.bind(itemView)
+        @SuppressLint("SetTextI18n")
         fun bind(service: Service){
             with(binding){
-                nameServiceTextView.text= service.description
+                nameServiceTextView.text= "Descripción: ${service.description}"
                 costServiceTextView.text = "Precio:$ ${service.cost}"
+                if(service.isCatSelected){
+                    "Mascota: Gato".also { petTextCardView.text = it }
+                }else {
+                    petTextCardView.text = "Mascota: Perro"
+                }
+                if(service.isBanharSelected){
+                    serviceTextCardView.text = "Se requiere cuidador para Baño de mascota"
+                }else if(service.isPaseoSelected){
+                    serviceTextCardView.text = "Se requiere cuidador para Pasear mascota"
+                }else {
+                    serviceTextCardView.text = "Se persona para Cuidar mascota"
+                }
 
             }
 

@@ -39,7 +39,7 @@ class ServicesViewModel : ViewModel() {
                     isCuidarSelected = isCuidarSelected,
                     isBanharSelected = isBanharSelected,
                     description = description,
-                    cost = cost.toFloat()
+                    cost = cost.toInt()
                 )
 
                 val result = servicesRepository.saveService(service)

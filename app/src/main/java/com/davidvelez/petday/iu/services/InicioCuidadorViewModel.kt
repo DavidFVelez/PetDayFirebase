@@ -10,6 +10,9 @@ import com.davidvelez.petday.data.ServicesRepository
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.perf.injection.modules.FirebasePerformanceModule_ProvidesConfigResolverFactory
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class InicioCuidadorViewModel : ViewModel() {
 
@@ -22,7 +25,6 @@ class InicioCuidadorViewModel : ViewModel() {
 
     private val _errorMsg: MutableLiveData<String?> = MutableLiveData()
     val errorMsg: LiveData<String?> = _errorMsg
-
 
     fun loadServices() {
         serviceList.clear()
