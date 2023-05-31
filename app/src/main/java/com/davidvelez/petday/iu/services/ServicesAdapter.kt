@@ -50,12 +50,37 @@ class ServicesAdapter (
                 }else {
                     petTextCardView.text = "Mascota: Perro"
                 }
-                if(service.isBanharSelected){
-                    serviceTextCardView.text = "Se requiere cuidador para Baño de mascota"
-                }else if(service.isPaseoSelected){
+                if(service.isBanharSelected and !(service.isPaseoSelected) and !(service.isCuidarSelected)){
+                    serviceTextCardView.text = "Se requiere cuidador para Baño de mascota"}
+
+                else if(service.isPaseoSelected and !(service.isBanharSelected) and !(service.isCuidarSelected)){
                     serviceTextCardView.text = "Se requiere cuidador para Pasear mascota"
-                }else {
-                    serviceTextCardView.text = "Se persona para Cuidar mascota"
+                }
+
+                else if(service.isCuidarSelected and !(service.isPaseoSelected) and !(service.isBanharSelected)){
+                    serviceTextCardView.text = "Se requiere cuidador para Cuidar mascota"
+                }
+
+
+                else if(service.isBanharSelected and service.isPaseoSelected and !(service.isCuidarSelected) ) {
+                    serviceTextCardView.text = "Se requiere cuidador para pasear y bañar mascota"
+
+                }
+
+                else if(service.isBanharSelected and service.isCuidarSelected and !(service.isPaseoSelected)) {
+                    serviceTextCardView.text = "Se requiere cuidador para cuidar y bañar mascota"
+
+                }
+
+                else if(service.isCuidarSelected and service.isPaseoSelected and !(service.isBanharSelected)) {
+                    serviceTextCardView.text = "Se requiere cuidador para pasear y cuidar mascota" }
+
+
+                else if(service.isCuidarSelected and service.isPaseoSelected and service.isBanharSelected) {
+                    serviceTextCardView.text = "Se requiere cuidador para cuidar, pasear y bañar mascota"}
+
+                else {
+                    serviceTextCardView.text = "Se requiere servicio personalizado para mascota"
                 }
 
             }
