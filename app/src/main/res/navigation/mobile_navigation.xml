@@ -13,7 +13,11 @@
         android:id="@+id/trabajosFragment"
         android:name="com.davidvelez.petday.iu.jobs.TrabajosFragment"
         android:label="Trabajos"
-        tools:layout="@layout/fragment_trabajos" />
+        tools:layout="@layout/fragment_trabajos" >
+        <action
+            android:id="@+id/action_trabajosFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/perfilCuidadorFragment"
         android:name="com.davidvelez.petday.iu.profile.PerfilCuidadorFragment"
@@ -25,8 +29,8 @@
         android:label="Inicio"
         tools:layout="@layout/fragment_inicio_cuidador" >
         <action
-            android:id="@+id/action_inicioCuidadorFragment_to_servicesFragment"
-            app:destination="@id/servicesFragment" />
+            android:id="@+id/action_inicioCuidadorFragment_to_mapsActivity2"
+            app:destination="@id/mapsActivity2" />
     </fragment>
     <fragment
         android:id="@+id/carerLoginFragment"
@@ -37,5 +41,14 @@
         android:id="@+id/servicesFragment"
         android:name="com.davidvelez.petday.iu.newservices.ServicesFragment"
         android:label="Nuevo servicio"
-        tools:layout="@layout/fragment_services" />
+        tools:layout="@layout/fragment_services" >
+        <action
+            android:id="@+id/action_servicesFragment_to_inicioCuidadorFragment"
+            app:destination="@id/inicioCuidadorFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/mapsActivity2"
+        android:name="com.davidvelez.petday.Map.MapsActivity"
+        android:label="activity_maps"
+        tools:layout="@layout/activity_maps" />
 </navigation>

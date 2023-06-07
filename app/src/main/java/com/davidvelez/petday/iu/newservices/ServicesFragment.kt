@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.davidvelez.petday.databinding.FragmentServicesBinding
+import com.davidvelez.petday.iu.jobs.TrabajosFragmentDirections
 
 class ServicesFragment : Fragment() {
 
@@ -29,7 +31,8 @@ class ServicesFragment : Fragment() {
                     cuidarNewService.isChecked,
                     banarNewService.isChecked,
                     descriptionNewServiceEditText.text.toString(),
-                    costNewServiceEditText.text.toString()
+                    costNewServiceEditText.text.toString(),
+                    direccionEditText.text.toString()
 
                 )
             }
@@ -41,7 +44,9 @@ class ServicesFragment : Fragment() {
 
         servicesViewModel.createServiceSuccess.observe(viewLifecycleOwner) { errorMsg ->
             Toast.makeText(requireContext(), errorMsg, Toast.LENGTH_SHORT).show()
-            requireActivity().onBackPressedDispatcher.onBackPressed()
+            //requireActivity().onBackPressedDispatcher.onBackPressed()
+            findNavController().navigate(ServicesFragmentDirections.actionServicesFragmentToInicioCuidadorFragment())
+            //activity?.finish()
         }
 
 

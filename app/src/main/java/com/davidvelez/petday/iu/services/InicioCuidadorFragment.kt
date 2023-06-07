@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.davidvelez.petday.Model.Service
 import com.davidvelez.petday.R
 import com.davidvelez.petday.databinding.FragmentInicioCuidadorBinding
+import com.davidvelez.petday.iu.login.CarerLoginFragmentDirections
 import com.davidvelez.petday.iu.newservices.ServicesViewModel
 
 class InicioCuidadorFragment : Fragment() {
@@ -31,8 +32,8 @@ class InicioCuidadorFragment : Fragment() {
         val view = binding.root
 
         binding.servicesButton.setOnClickListener {
-            findNavController().navigate(InicioCuidadorFragmentDirections.actionInicioCuidadorFragmentToServicesFragment())
-
+            //findNavController().navigate(InicioCuidadorFragmentDirections.actionInicioCuidadorFragmentToServicesFragment())
+            findNavController().navigate(InicioCuidadorFragmentDirections.actionInicioCuidadorFragmentToMapsActivity2())
         }
 
         servicesAdapter = ServicesAdapter(servicesList,

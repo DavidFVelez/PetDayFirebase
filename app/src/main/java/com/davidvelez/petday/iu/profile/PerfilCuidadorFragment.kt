@@ -18,7 +18,10 @@ class PerfilCuidadorFragment : Fragment() {
     private var _binding: FragmentPerfilCuidadorBinding? = null
     private val binding get() = _binding!!
 
+
+
     override fun onCreateView(
+
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,6 +51,10 @@ class PerfilCuidadorFragment : Fragment() {
             val intent = Intent(activity, MainActivity::class.java)
             startActivity(intent)
             activity?.finish()
+
+        }
+
+        binding.imageView3.setOnClickListener {
 
         }
         return root

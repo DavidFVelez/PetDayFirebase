@@ -27,7 +27,9 @@ class ServicesViewModel : ViewModel() {
         isCuidarSelected: Boolean,
         isBanharSelected: Boolean,
         description: String,
-        cost: String
+        cost: String,
+        direcion:String
+
     ) {
 
         if(description.isNotEmpty() && cost.isNotEmpty()){
@@ -39,7 +41,10 @@ class ServicesViewModel : ViewModel() {
                     isCuidarSelected = isCuidarSelected,
                     isBanharSelected = isBanharSelected,
                     description = description,
-                    cost = cost.toInt()
+                    cost = cost.toInt(),
+                    direcion =direcion,
+                    publicado = true
+
                 )
 
                 val result = servicesRepository.saveService(service)

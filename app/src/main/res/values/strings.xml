@@ -48,4 +48,6 @@
     <string name="agregar_foto_new_service">Agregar foto</string>
     <string name="tu_mascota_es_un_new_service">¿Tu mascota es un ?</string>
     <string name="solicitud_de_cuidado_de_gato">Solicitud de cuidado de gato</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="direcion">Dirección</string>
 </resources>

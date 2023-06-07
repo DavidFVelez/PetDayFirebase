@@ -1,5 +1,6 @@
 package com.davidvelez.petday.iu.profile
 
+import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -24,6 +25,9 @@ class ProfileCarerViewModel : ViewModel() {
 
     private val _userLoaded: MutableLiveData<User?> = MutableLiveData()
     val userLoaded: LiveData<User?> = _userLoaded
+
+    private val _selectedImage: MutableLiveData<Uri?> = MutableLiveData()
+    val selectedImage: LiveData<Uri?> = _selectedImage
 
     fun signOut() {
         userRepository.signOut()
@@ -57,4 +61,11 @@ class ProfileCarerViewModel : ViewModel() {
             }
         }
     }
+
+
+
+
+
+
+
 }

@@ -9,5 +9,8 @@ data class Service(
     var isCuidarSelected: Boolean = false,
     var isBanharSelected: Boolean = false,
     var description: String? = null,
-    var cost: Int? = null
+    var cost: Int? = null,
+    var direcion: String? = null,
+    var publicado: Boolean = false
+
 )
